@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_admin/constants.dart';
 import 'package:flutter_admin/screens/dashboard/dashboard_screen.dart';
-import 'package:flutter_admin/screens/home/components/drawer_list_tile.dart';
 import 'package:flutter_admin/screens/home/components/side_menu.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -34,6 +32,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(child: SideMenu()),
             Expanded(
