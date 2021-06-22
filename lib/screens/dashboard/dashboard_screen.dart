@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_admin/constants.dart';
 
 import 'components/header.dart';
+import 'components/storage_details.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -15,6 +15,27 @@ class DashboardScreen extends StatelessWidget {
         child: Column(
           children: [
             Header(),
+            SizedBox(
+              height: kDefaultPadding,
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  flex: 5,
+                  child: Container(
+                    height: 500,
+                    decoration: BoxDecoration(
+                        color: kSecondaryColor,
+                        borderRadius: kDefaultBorderRadius),
+                  ),
+                ),
+                SizedBox(
+                  width: kDefaultPadding,
+                ),
+                StorageDetails(),
+              ],
+            )
           ],
         ),
       ),

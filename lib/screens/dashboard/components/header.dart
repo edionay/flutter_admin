@@ -80,7 +80,7 @@ class SearchField extends StatelessWidget {
         ),
         suffixIcon: Container(
           decoration: BoxDecoration(
-            color: kPrinaryColor,
+            color: kPrimaryColor,
             borderRadius: BorderRadius.all(
               Radius.circular(10),
             ),
