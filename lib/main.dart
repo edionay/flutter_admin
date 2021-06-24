@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_admin/constants.dart';
+import 'package:flutter_admin/responsive.dart';
 import 'package:flutter_admin/screens/dashboard/dashboard_screen.dart';
 import 'package:flutter_admin/screens/home/components/side_menu.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -34,7 +35,7 @@ class HomeScreen extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(child: SideMenu()),
+            if (Responsive.isDesktop(context)) Expanded(child: SideMenu()),
             Expanded(
               flex: 5,
               child: DashboardScreen(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_admin/responsive.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../constants.dart';
@@ -12,13 +13,23 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(
-          'Dashboard',
-          style: Theme.of(context).textTheme.headline6,
+        if (Responsive.isMobile(context))
+          IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () {},
+          ),
+        SizedBox(
+          width: kDefaultPadding,
         ),
-        Spacer(
-          flex: 2,
-        ),
+        if (!Responsive.isMobile(context))
+          Text(
+            'Dashboard',
+            style: Theme.of(context).textTheme.headline6,
+          ),
+        if (!Responsive.isMobile(context))
+          Spacer(
+            flex: Responsive.isDesktop(context) ? 2 : 1,
+          ),
         Expanded(
           child: SearchField(),
         ),
@@ -52,11 +63,12 @@ class ProfileCard extends StatelessWidget {
             'assets/images/profile_pic.png',
             height: 38,
           ),
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
-            child: Text('Edionay Aguiar'),
-          ),
+          if (!Responsive.isMobile(context))
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
+              child: Text('Edionay Aguiar'),
+            ),
           Icon(Icons.keyboard_arrow_down)
         ],
       ),
