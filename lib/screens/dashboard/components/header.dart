@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_admin/controllers/menu_controller.dart';
 import 'package:flutter_admin/responsive.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
 import '../../../constants.dart';
 
@@ -16,7 +18,7 @@ class Header extends StatelessWidget {
         if (Responsive.isMobile(context))
           IconButton(
             icon: Icon(Icons.menu),
-            onPressed: () {},
+            onPressed: context.read<MenuController>().controlMenu,
           ),
         SizedBox(
           width: kDefaultPadding,

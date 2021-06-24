@@ -27,7 +27,8 @@ class MyFiles extends StatelessWidget {
               style: TextButton.styleFrom(
                 padding: EdgeInsets.symmetric(
                     horizontal: kDefaultPadding * 1.5,
-                    vertical: kDefaultPadding),
+                    vertical: kDefaultPadding /
+                        (Responsive.isMobile(context) ? 2 : 1)),
               ),
               onPressed: () {},
               icon: Icon(Icons.add),
